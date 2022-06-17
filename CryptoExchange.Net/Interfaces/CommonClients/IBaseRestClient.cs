@@ -93,6 +93,15 @@ namespace CryptoExchange.Net.Interfaces.CommonClients
         Task<WebCallResult<IEnumerable<Balance>>> GetBalancesAsync(string? accountId = null, CancellationToken ct = default);
 
         /// <summary>
+        /// Get balances
+        /// </summary>
+        /// <param name="asset">[Optional] The asset to retrieve balances for, required for some exchanges, ignored otherwise</param>
+        /// <param name="accountType">[Optional] The account type to retrieve balances for, required for some exchanges, ignored otherwise</param>
+        /// <param name="ct">[Optional] Cancellation token for cancelling the request</param>
+        /// <returns></returns>
+        Task<WebCallResult<IEnumerable<Balance>>> GetBalancesAsync(string? asset = null, byte? accountType = null, CancellationToken ct = default);
+
+        /// <summary>
         /// Get an order by id
         /// </summary>
         /// <param name="orderId">The id</param>
